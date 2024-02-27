@@ -7,7 +7,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>gulimall</name>
     <description>聚合模块</description>
-
+<!--类型-->
     <packaging>pom</packaging>
     <modules>
         <module>gulimall-coupon</module>
@@ -15,6 +15,12 @@
         <module>gulimall-order</module>
         <module>gulimall-ware</module>
         <module>gulimall-product</module>
+
+        <module>gulimall-common</module>
+
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+
     </modules>
 
 </project>
