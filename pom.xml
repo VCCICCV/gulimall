@@ -9,6 +9,11 @@
     <description>聚合模块</description>
 <!--类型-->
     <packaging>pom</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
     <modules>
         <module>gulimall-coupon</module>
         <module>gulimall-member</module>
@@ -21,6 +26,7 @@
 
         <module>renren-fast</module>
         <module>renren-generator</module>
+
 
     </modules>
 
