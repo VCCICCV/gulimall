@@ -54,6 +54,16 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         baseMapper.deleteBatchIds(list);
     }
 
+    @Override
+    public Long[] findCatelogPath(Long catelogId) {
+        return new Long[0];
+    }
+
+    @Override
+    public void updateCascade(CategoryEntity category) {
+
+    }
+
     //递归查出所有菜单子菜单
     private List<CategoryEntity> getChildrens(CategoryEntity root,List<CategoryEntity> all){
         List<CategoryEntity> children = all.stream().filter(categoryEntity -> {
@@ -68,4 +78,5 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         }).collect(Collectors.toList());
         return children;
     }
+
 }

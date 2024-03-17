@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    application:
+      name: xxx
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: xxx
+        group: DEFAULT_GROUP
+        ext-config[0]:
+          data-id: oss.yaml
+          group: DEFAULT_GROUP
+          refresh: true
