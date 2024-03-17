@@ -5,7 +5,7 @@ spring:
     nacos:
       config:
         server-addr: localhost:8848
-        namespace: xxx
+        namespace: 9bf3a7de-91fb-472e-a5f6-c70ca7640488
         group: DEFAULT_GROUP
         ext-config[0]:
           data-id: oss.yaml

@@ -22,15 +22,7 @@ spring:
           predicates:
             - Path=/api/product/**
           filters:
-              - RewritePath=/api/(?<segment>.*),/$\{segment}
-        - id: admin_route
-          uri: lb://renren-fast
-          predicates:
-            - Path=/api/**
-          filters:
-            - RewritePath=/api/(?<segment>.*), /renren-fast/$\{segment}
-
-
+            - RewritePath=/api/(?<segment>/?.*),/$\{segment}
 
         - id: coupon_route
           uri: lb://gulimall-coupon
@@ -38,7 +30,7 @@ spring:
             - Path=/api/coupon/**
           filters:
             - RewritePath=/api/(?<segment>/?.*),/$\{segment}
-
+#oss
         - id: third_party_route
           uri: lb://gulimall-third-party
           predicates:
@@ -66,7 +58,13 @@ spring:
             - Path=/api/order/**
           filters:
             - RewritePath=/api/(?<segment>/?.*),/$\{segment}
-
+#最后匹配方案
+        - id: admin_route
+          uri: lb://renren-fast
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>/?.*), /renren-fast/$\{segment}
 
         - id: gulimall_host_route
           uri: lb://gulimall-product

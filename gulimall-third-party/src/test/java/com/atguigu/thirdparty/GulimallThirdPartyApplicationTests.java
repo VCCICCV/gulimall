@@ -18,19 +18,18 @@ public class GulimallThirdPartyApplicationTests {
     @Test
     public void contextLoads() {
     }
-//	@Autowired
-//	OSS ossClient;
+	@Autowired
+	OSS ossClient;
 
-//	@Test
-//	public void testUpload() throws FileNotFoundException {
-//
-//		//上传文件流。
-//		InputStream inputStream = new FileInputStream("D:\\BaiduNetdiskDownload\\谷粒商城\\课件和文档\\基础篇\\资料\\pics\\5b5e74d0978360a1.jpg");
-//		ossClient.putObject("gulimall-vcciccv", "5b5e74d0978360a1.jpg", inputStream);
-//
-//		// 关闭OSSClient。
-//		ossClient.shutdown();
-//		System.out.println("上传成功.");
-//	}
+	@Test
+	public void testUpload() throws FileNotFoundException {
+		//上传文件流。
+		InputStream inputStream = new FileInputStream("D:\\BaiduNetdiskDownload\\谷粒商城\\课件和文档\\基础篇\\资料\\pics\\5b5e74d0978360a1.jpg");
+		ossClient.putObject("gulimall-vcciccv", "5b5e74d0978360a1.jpg", inputStream);
+
+		// 关闭OSSClient。
+		ossClient.shutdown();
+		System.out.println("上传成功.");
+	}
 
 }

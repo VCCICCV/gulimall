@@ -71,7 +71,7 @@
         layout="total, sizes, prev, pager, next, jumper"
       ></el-pagination>
       <!-- 弹窗, 新增 / 修改 -->
-      <!-- <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update> -->
+      <add-or-update v-if="addOrUpdateVisible" ref="addOrUpdate" @refreshDataList="getDataList"></add-or-update>
   
       <el-dialog title="关联分类" :visible.sync="cateRelationDialogVisible" width="30%">
         <el-popover placement="right-end" v-model="popCatelogSelectVisible">
@@ -105,7 +105,7 @@
   </template>
   
   <script>
-//   import AddOrUpdate from "./brand-add-or-update";
+  import AddOrUpdate from "./brand-add-or-update";
   import CategoryCascader from "../common/category-cascader";
   export default {
     data() {
