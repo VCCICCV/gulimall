@@ -5,9 +5,9 @@ spring:
   datasource:
     #MySQL??
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.147.156:3306/gulimall_ums?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://36.138.97.124:3306/gulimall_ums?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
-    password: 666666
+    password: CCI31415927cci
   cloud:
     nacos:
       discovery:
