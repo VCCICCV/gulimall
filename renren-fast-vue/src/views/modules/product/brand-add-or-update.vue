@@ -60,7 +60,7 @@ export default {
         firstLetter: "",
         sort: 0
       },
-      dataRule: {
+      dataRule: { 
         name: [{ required: true, message: "品牌名不能为空", trigger: "blur" }],
         logo: [
           { required: true, message: "品牌logo地址不能为空", trigger: "blur" }

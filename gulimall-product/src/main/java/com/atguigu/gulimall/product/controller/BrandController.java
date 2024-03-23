@@ -1,16 +1,19 @@
 package com.atguigu.gulimall.product.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.atguigu.gulimall.common.utils.PageUtils;
 import com.atguigu.gulimall.common.utils.R;
+import com.atguigu.gulimall.common.valid.UpdateStatusGroup;
 import com.atguigu.gulimall.common.validator.group.AddGroup;
 import com.atguigu.gulimall.common.validator.group.UpdateGroup;
 import com.atguigu.gulimall.product.entity.CategoryEntity;
 import com.atguigu.gulimall.product.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -66,24 +69,24 @@ public class BrandController {
     @RequestMapping("/save")
     //@RequiresPermissions("product:brand:save")
     public R save(@Validated({AddGroup.class}) @RequestBody BrandEntity brand
-                  //, BindingResult result
+//                  , BindingResult result
     ){
 
-        // Map<String,String> map = new HashMap<>();
-        //
-        // if (result.hasErrors()) {
-        //     //获取效验错误结果
-        //     result.getFieldErrors().forEach((item)-> {
-        //         //获取到错误提示
-        //         String message = item.getDefaultMessage();
-        //         //获取错误的属性的名字
-        //         String field = item.getField();
-        //         map.put(field,message);
-        //     });
-        //     return R.error(400,"提交的数据不合法").put("data",map);
-        // } else {
-        //
-        // }
+//         Map<String,String> map = new HashMap<>();
+//
+//         if (result.hasErrors()) {
+//             //获取效验错误结果
+//             result.getFieldErrors().forEach((item)-> {
+//                 //获取到错误提示
+//                 String message = item.getDefaultMessage();
+//                 //获取错误的属性的名字
+//                 String field = item.getField();
+//                 map.put(field,message);
+//             });
+//             return R.error(400,"提交的数据不合法").put("data",map);
+//         } else {
+//
+//         }
         brandService.save(brand);
 
 
@@ -104,13 +107,13 @@ public class BrandController {
     /**
      * 修改状态
      */
-//    @RequestMapping("/update/status")
-//    //@RequiresPermissions("product:brand:update")
-//    public R updateStatus(@Validated(UpdateStatusGroup.class) @RequestBody BrandEntity brand){
-//        brandService.updateById(brand);
-//
-//        return R.ok();
-//    }
+    @RequestMapping("/update/status")
+    //@RequiresPermissions("product:brand:update")
+    public R updateStatus(@Validated(UpdateStatusGroup.class) @RequestBody BrandEntity brand){
+        brandService.updateById(brand);
+
+        return R.ok();
+    }
 
     /**
      * 删除
