@@ -35,6 +35,7 @@ public class BrandEntity implements Serializable {
 	private Long brandId;
 	/**
 	 * 品牌名
+	 * Groups分组校验
 	 */
 	@NotBlank(message = "品牌名必须提交",groups = {AddGroup.class,UpdateGroup.class})
 	private String name;
@@ -50,6 +51,10 @@ public class BrandEntity implements Serializable {
 	private String descript;
 	/**
 	 * 显示状态[0-不显示；1-显示]
+	 * 自定义校验注解
+	 * 1、编写自定义校验注解
+	 * 2、编写自定义校验器ConstraintValidator
+	 * 3、关联自定义的校验器和校验注解@Constraint(validatedBy = {ListValueConstraintValidator.class})可以指定多个不同的校验器
 	 */
 //	@Pattern()
 	@NotNull(groups = {AddGroup.class, UpdateStatusGroup.class})
@@ -67,5 +72,4 @@ public class BrandEntity implements Serializable {
 	@NotNull(groups={AddGroup.class})
 	@Min(value = 0,message = "排序必须大于等于0",groups={AddGroup.class,UpdateGroup.class})
 	private Integer sort;
-
 }

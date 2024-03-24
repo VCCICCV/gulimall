@@ -65,6 +65,7 @@ public class BrandController {
 
     /**
      * 保存
+     * @Validated指定校验分组
      */
     @RequestMapping("/save")
     //@RequiresPermissions("product:brand:save")
