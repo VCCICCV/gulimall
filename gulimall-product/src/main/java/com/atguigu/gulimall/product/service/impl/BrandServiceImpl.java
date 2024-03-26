@@ -26,12 +26,12 @@ public class BrandServiceImpl extends ServiceImpl<BrandDao, BrandEntity> impleme
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-
         //1、获取key
         String key = (String) params.get("key");
         QueryWrapper<BrandEntity> queryWrapper = new QueryWrapper<>();
         //如果传过来的数据不是空的，就进行多参数查询
         if (!StringUtils.isEmpty(key)) {
+            //封装brand_id或者name
             queryWrapper.eq("brand_id",key).or().like("name",key);
         }
 

@@ -22,4 +22,3 @@ buildNumber.properties
 .idea
 **/.gitignore
 /nacos/
-/nacos-server-1.4.7/
